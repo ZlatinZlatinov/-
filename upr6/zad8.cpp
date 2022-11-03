@@ -1,27 +1,29 @@
 #include <iostream>
 //zad8
 using namespace std;
-int last = 0;
-int first = 1;
+int previousNum = 0;
+int currentNum = 1;
+
 int n; 
-int sum = 1;  
-int y = 0;
+
+int currentSum = 0;  
+int counter = 1;
 
 
 int main(){ 
     cout << "Enter a number: " << endl;
     cin >> n; 
-    if(n == 0){
-        cout >> n; 
-        return 0;
-    }
-    while(y != n){ 
-        cout << sum << endl;
-        sum = last + first;  
-        last = first; 
-        first = sum;
-        y++;
-    }
+    
+    while(counter <= n){ 
+        /*cout << currentSum << endl;*/ /*Това извежда числата на всеки следващ ред*/
+        
+        currentSum = previousNum + currentNum;  
+        previousNum = currentNum; 
+        currentNum = currentSum;
+        counter++;
+    } 
+    
+    cout  << "Fibonacci: " << previousNum;
     
     return 0;
 }
