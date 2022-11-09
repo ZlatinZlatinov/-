@@ -1,0 +1,24 @@
+#include <iostream>
+// Перфектни числа
+using namespace std;
+
+int main(){
+    cout << "Въведете число:" << endl;
+    int num; 
+    cin >> num; 
+    
+    for(int x = 1; x <= num; x++){
+        int sum = 0; 
+        for(int y = 1; y < x; y++){
+            if(x % y == 0){
+                sum += y;
+            }
+        } 
+        
+        if(sum == x){
+            cout << "Перфектно число: " << sum <<endl;
+        }
+    }
+
+    return 0;
+}
